@@ -10,7 +10,7 @@ const ResultItem = ({ result }) => {
             <Image style={styles.imageStyle} source={{ uri: image_url }} />
             <Text style={styles.nameStyle}>{name}</Text>
             <Text>
-                {result.rating} Stars, {result.review_count} Reviews
+                {rating} Stars, {review_count} Reviews
             </Text>
         </View>
     );
