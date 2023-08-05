@@ -6,8 +6,6 @@ const ResultScreen = ({ navigation }) => {
     const id = navigation.getParam('id');
     const [result, setResult] = useState(null);
 
-    const { name, photos } = result;
-
     const getResult = async id => {
         try {
             const response = await yelp.get(`/${id}`);
@@ -26,9 +24,9 @@ const ResultScreen = ({ navigation }) => {
 
     return (
         <View style={styles.containerStyle}>
-            <Text style={styles.nameStyle}>{name}</Text>
+            <Text style={styles.nameStyle}>{result.name}</Text>
             <FlatList
-                data={photos}
+                data={result.photos}
                 keyExtractor={photo => photo}
                 renderItem={({ item }) => {
                     return (
